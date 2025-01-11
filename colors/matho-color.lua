@@ -1,0 +1,1 @@
+require('matho-color').setup()
