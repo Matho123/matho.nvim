@@ -6,10 +6,10 @@ local palette = {
     fg_01 = "#dddddd",
     fg_02 = "#f0f0f0",
     bg_main = "none",
-    green = "#b3d498",
-    blue = "#98b1d4",
-    purple = "#ce98d4",
-    orange = "#d4b698",
+    green = "#93b595",
+    blue = "#81a5b8",
+    purple = "#a893b5",
+    orange = "#c9b181",
     red = "#ba848c",
 }
 
