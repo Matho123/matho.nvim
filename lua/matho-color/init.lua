@@ -12,8 +12,9 @@ local palette = {
     light_purple = "#bf8fb5",
     dark_purple = "#65435e",
     green = "#819B69",
-    yellow = "#d4ba74",
+    yellow = "#cfad70",
     red = "#de6e7c",
+    blue = "#70a7cf",
 }
 
 local hl = {}
@@ -77,6 +78,10 @@ hl.syntax = {
     DiagnosticUnderlineError = { sp = palette.red, fmt = "undercurl" },
     DiagnosticWarn = { fg = palette.yellow },
     DiagnosticUnderlineWarn = { sp = palette.yellow, fmt = "undercurl" },
+    DiagnosticInfo = { fg = palette.blue },
+    DiagnosticUnderlineInfo = { sp = palette.blue, fmt = "undercurl" },
+    DiagnosticHint = { fg = palette.blue },
+    DiagnosticUnderlineHint = { sp = palette.blue, fmt = "undercurl" },
 }
 
 -- comment
@@ -101,6 +106,7 @@ hl.treesitter = {
     ["@markup"] = { fg = palette.fg_main },
     ["@diff"] = { fg = palette.fg_main },
     ["@tag"] = hl.syntax.Tag,
+    ["@tag.delimiter"] = hl.syntax.Delimiter,
 }
 
 local function set_highlights(highlights)
