@@ -23,7 +23,7 @@ local hl = {}
 hl.common = {
     LineNr = { fg = "#616161" },
     CursorLineNr = { fg = palette.fg_main, fmt = "bold" },
-    CursorLine = { bg = "#222222" },
+    CursorLine = { bg = "#1c1c1c" },
     Directory = { fg = palette.fg_main, fmt = "bold" },
     ModeMsg = { fg = palette.fg_main, fmt = "bold" },
     Search = { fg = palette.fg_main, bg = palette.dark_purple },
