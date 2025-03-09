@@ -23,7 +23,7 @@ hl.common = {
     LineNr = { fg = "#616161" },
     CursorLineNr = { fg = palette.fg_main, fmt = "bold" },
     CursorLine = { bg = "#222222" },
-    Directory = { fg = palette.blue },
+    Directory = { fg = palette.fg_main, fmt = "bold" },
     ModeMsg = { fg = palette.fg_main, fmt = "bold" },
     Search = { fg = palette.fg_main, bg = palette.dark_purple },
     MatchParen = { fg = palette.fg_main, bg = palette.dark_purple },
@@ -32,9 +32,11 @@ hl.common = {
     CurSearch = { fg = palette.background, bg = palette.light_purple },
     IncSearch = { fg = palette.background, bg = palette.light_purple },
     WildMenu = { fg = palette.background, bg = palette.light_purple },
-    StatusLine = { fg = palette.fg_main, bg = "#303030"},
-    MoreMsg = {fg = palette.green, fmt = "bold" },
-    Question = {fg = palette.green, fmt = "bold" },
+    StatusLine = { fg = palette.fg_main, bg = "#303030" },
+    MoreMsg = { fg = palette.green, fmt = "bold" },
+    Question = { fg = palette.green, fmt = "bold" },
+    netrwComment = { fg = palette.darker2 },
+    netrwQuickHelp = { fg = palette.darker2 },
 }
 
 hl.syntax = {
