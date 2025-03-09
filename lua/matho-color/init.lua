@@ -10,6 +10,7 @@ local palette = {
     background = "#191919",
 
     light_purple = "#bf8fb5",
+    purple = "#a87da0",
     dark_purple = "#65435e",
     green = "#819B69",
     yellow = "#cfad70",
@@ -71,7 +72,7 @@ hl.syntax = {
     Title = { fg = palette.fg_main, fmt = "bold" },
     Tag = { fg = palette.darker1, fmt = "bold" },
     Delimiter = { fg = palette.darker3 },
-    Comment = { fg = palette.light_purple, fmt = "italic" },
+    Comment = { fg = palette.purple, fmt = "italic" },
     SpecialComment = { fg = palette.light_purple, fmt = "italic" },
     Todo = { fg = palette.fg_main },
     Error = { fg = palette.red },
