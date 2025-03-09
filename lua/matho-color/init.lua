@@ -1,78 +1,106 @@
-local M = { }
+local M = {}
 
 -- comment
 local palette = {
-    fg_main = "#b0b0b0",
-    fg_01 = "#dddddd",
-    fg_02 = "#f0f0f0",
-    bg_main = "none",
-    green = "#93b595",
-    blue = "#81a5b8",
-    purple = "#a893b5",
-    orange = "#c9b181",
-    red = "#ba848c",
+    fg_main = "#bbbbbb",
+    darker1 = "#9e9e9e",
+    darker2 = "#8b8b8b",
+    darker3 = "#7c7c7c",
+
+    background = "#191919",
+
+    light_purple = "#bf8fb5",
+    dark_purple = "#65435e",
+    green = "#819B69",
+    yellow = "#d4ba74",
+    red = "#de6e7c",
 }
 
-local hl = { }
+local hl = {}
+
+hl.common = {
+    LineNr = { fg = "#616161" },
+    CursorLineNr = { fg = palette.fg_main, fmt = "bold" },
+    CursorLine = { bg = "#222222" },
+    Directory = { fg = palette.blue },
+    ModeMsg = { fg = palette.fg_main, fmt = "bold" },
+    Search = { fg = palette.fg_main, bg = palette.dark_purple },
+    MatchParen = { fg = palette.fg_main, bg = palette.dark_purple },
+    Substitute = { fg = palette.fg_main, bg = palette.dark_purple },
+    QuickFixLine = { fg = palette.fg_main, bg = palette.dark_purple },
+    CurSearch = { fg = palette.background, bg = palette.light_purple },
+    IncSearch = { fg = palette.background, bg = palette.light_purple },
+    WildMenu = { fg = palette.background, bg = palette.light_purple },
+    StatusLine = { fg = palette.fg_main, bg = "#303030"},
+    MoreMsg = {fg = palette.green, fmt = "bold" },
+    Question = {fg = palette.green, fmt = "bold" },
+}
 
 hl.syntax = {
     Normal = { fg = palette.fg_main },
-    String = { fg = palette.fg_main },
-    Character = { fg = palette.fg_main },
-    Number = { fg = palette.fg_main },
-    Float = { fg = palette.fg_main },
-    Boolean = { fg = palette.fg_main },
-    Type = { fg = palette.fg_main },
+    Bold = { fmt = "bold" },
+    Boolean = { fg = palette.fg_main, fmt = "italic" },
+    String = { fg = palette.darker2, fmt = "italic" },
+    Character = { fg = palette.darker2, fmt = "italic" },
+    Number = { fg = palette.darker2 },
+    Float = { fg = palette.darker2 },
+    Type = { fg = palette.darker1 },
+    Typedef = { fg = palette.darker1 },
     Structure = { fg = palette.fg_main },
     StorageClass = { fg = palette.fg_main },
-    Identifier = { fg = palette.fg_main },
-    Constant = { fg = palette.fg_main },
+    Identifier = { fg = palette.darker1 },
+    Constant = { fg = palette.darker1, fmt = "bold" },
     PreProc = { fg = palette.fg_main },
     PreCondit = { fg = palette.fg_main },
-    Include = { fg = palette.fg_main },
-    Keyword = { fg = palette.fg_main },
+    Keyword = { fg = palette.fg_main, fmt = "bold" },
     Define = { fg = palette.fg_main },
-    Typedef = { fg = palette.fg_main },
     Exception = { fg = palette.fg_main },
     Conditional = { fg = palette.fg_main },
     Repeat = { fg = palette.fg_main },
-    Statement = { fg = palette.fg_main },
+    Statement = { fg = palette.fg_main, fmt = "bold" },
+    Label = { fg = palette.fg_main, fmt = "bold" },
+    Include = { fg = palette.fg_main, fmt = "bold" },
     Macro = { fg = palette.fg_main },
-    Error = { fg = palette.fg_main },
-    Label = { fg = palette.fg_main },
-    Special = { fg = palette.fg_main },
-    SpecialChar = { fg = palette.fg_main },
+    Special = { fg = palette.darker1, fmt = "bold" },
+    SpecialChar = { fg = palette.darker1, fmt = "bold" },
     Function = { fg = palette.fg_main },
     Operator = { fg = palette.fg_main },
-    Title = { fg = palette.fg_main },
-    Tag = { fg = palette.fg_main },
-    Delimiter = { fg = palette.fg_main },
-    Comment = { fg = palette.fg_main },
-    SpecialComment = { fg = palette.fg_main },
+    Title = { fg = palette.fg_main, fmt = "bold" },
+    Tag = { fg = palette.darker1, fmt = "bold" },
+    Delimiter = { fg = palette.darker3 },
+    Comment = { fg = palette.light_purple, fmt = "italic" },
+    SpecialComment = { fg = palette.light_purple, fmt = "italic" },
     Todo = { fg = palette.fg_main },
+    Error = { fg = palette.red },
+    ErrorMsg = { fg = palette.red },
+    DiagnosticError = { fg = palette.red },
+    DiagnosticUnderlineError = { sp = palette.red, fmt = "undercurl" },
+    DiagnosticWarn = { fg = palette.yellow },
+    DiagnosticUnderlineWarn = { sp = palette.yellow, fmt = "undercurl" },
 }
 
 -- comment
 hl.treesitter = {
-    ["@variable"] = { fg = palette.fg_main },
-    ["@constant"] = { fg = palette.fg_main },
-    ["@module"] = { fg = palette.fg_main },
-    ["@label"] = { fg = palette.fg_main },
-    ["@string"] = { fg = palette.green },
-    ["@character"] = { fg = palette.green },
-    ["@boolean"] = { fg = palette.fg_main },
-    ["@number"] = { fg = palette.orange },
-    ["@type"] = { fg = palette.fg_02 },
-    ["@attribute"] = { fg = palette.fg_01 },
-    ["@function"] = { fg = palette.fg_02 },
+    ["@variable"] = hl.syntax.Identifier,
+    ["@constant"] = hl.syntax.Constant,
+    ["@module"] = { fg = palette.darker2, fmt = "italic" },
+    ["@label"] = hl.syntax.Label,
+    ["@string"] = hl.syntax.String,
+    ["@character"] = { fg = palette.blue },
+    ["@boolean"] = hl.syntax.Boolean,
+    ["@number"] = hl.syntax.Number,
+    ["@type"] = hl.syntax.Type,
+    ["@type.builtin"] = hl.syntax.Type,
+    ["@attribute"] = { fg = palette.fg_main },
+    ["@function"] = hl.syntax.Function,
     ["@constructor"] = { fg = palette.fg_main },
-    ["@operator"] = { fg = palette.fg_01 },
-    ["@keyword"] = { fg = palette.purple },
-    ["@punctuation"] = { fg = palette.fg_01 },
-    ["@comment"] = { fg = palette.orange },
+    ["@operator"] = hl.syntax.Statement,
+    ["@keyword"] = hl.syntax.Keyword,
+    ["@punctuation"] = hl.syntax.Delimiter,
+    ["@comment"] = hl.syntax.Comment,
     ["@markup"] = { fg = palette.fg_main },
     ["@diff"] = { fg = palette.fg_main },
-    ["@tag"] = { fg = palette.fg_main },
+    ["@tag"] = hl.syntax.Tag,
 }
 
 local function set_highlights(highlights)
@@ -92,6 +120,7 @@ end
 function M.setup()
     vim.g.colors_name = "matho-color"
 
+    set_highlights(hl.common)
     set_highlights(hl.syntax)
     set_highlights(hl.treesitter)
 end
