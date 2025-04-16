@@ -38,6 +38,7 @@ hl.common = {
     Question = { fg = palette.green, fmt = "bold" },
     netrwComment = { fg = palette.darker2 },
     netrwQuickHelp = { fg = palette.darker2 },
+    Visual = { bg = "#393939" },
 }
 
 hl.syntax = {
