@@ -110,6 +110,7 @@ hl.treesitter = {
     ["@diff"] = { fg = palette.fg_main },
     ["@tag"] = hl.syntax.Tag,
     ["@tag.delimiter"] = hl.syntax.Delimiter,
+    ["@tag.attribute"] = { fg = palette.darker1 },
 }
 
 local function set_highlights(highlights)
@@ -124,7 +125,6 @@ local function set_highlights(highlights)
         vim.api.nvim_command(hl_command)
     end
 end
-
 
 function M.setup()
     vim.g.colors_name = "matho-color"
