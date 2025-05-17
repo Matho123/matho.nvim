@@ -39,6 +39,7 @@ hl.common = {
     netrwComment = { fg = palette.darker2 },
     netrwQuickHelp = { fg = palette.darker2 },
     Visual = { bg = "#393939" },
+    Whitespace = { fg = "#303030" },
 }
 
 hl.syntax = {
