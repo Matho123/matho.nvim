@@ -9,18 +9,18 @@ local palette = {
 
     background = "#191919",
 
+    red = "#de6e7c",
+    dark_red = "#ad858f",
+
     light_purple = "#bf8fb5",
     purple = "#a87da0",
     dark_purple = "#65435e",
 
-    green = "#819B69",
+    blue = "#70a7cf",
 
     yellow = "#cfad70",
 
-    red = "#de6e7c",
-    dark_red = "#ad858f",
-
-    blue = "#70a7cf",
+    green = "#819B69",
 }
 
 local num = 0
@@ -95,6 +95,7 @@ hl.syntax = {
     DiagnosticUnderlineInfo = { sp = palette.blue, fmt = "undercurl" },
     DiagnosticHint = { fg = palette.blue },
     DiagnosticUnderlineHint = { sp = palette.blue, fmt = "undercurl" },
+    DiagnosticUnnecessary = { fg = palette.blue, fmt = "italic" },
 }
 
 -- comment
