@@ -16,6 +16,7 @@ local palette = {
     yellow = "#cfad70",
     red = "#de6e7c",
     blue = "#70a7cf",
+    blue_less_sat = "#958fa3",
 }
 
 local hl = {}
@@ -46,8 +47,8 @@ hl.syntax = {
     Normal = { fg = palette.fg_main },
     Bold = { fmt = "bold" },
     Boolean = { fg = palette.fg_main, fmt = "italic" },
-    String = { fg = palette.darker2, fmt = "italic" },
-    Character = { fg = palette.darker2, fmt = "italic" },
+    String = { fg = palette.blue_less_sat },
+    Character = { fg = palette.blue_less_sat },
     Number = { fg = palette.darker2 },
     Float = { fg = palette.darker2 },
     Type = { fg = palette.darker1 },
