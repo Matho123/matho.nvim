@@ -19,7 +19,7 @@ local palette = {
     blue = "#70a7cf",
     dark_blue = "#9285ad",
 
-    yellow = "#cfad70",
+    yellow = "#cf9970",
 
     green = "#819B69",
 }
@@ -74,7 +74,7 @@ hl.syntax = {
     Include = { fg = palette.fg_main, fmt = "bold" },
     Macro = { fg = palette.fg_main },
     Special = { fg = palette.darker1, fmt = "bold" },
-    SpecialChar = { fg = palette.darker1, fmt = "bold" },
+    SpecialChar = { fg = palette.dark_blue, fmt = "bold" },
     Function = { fg = palette.fg_main },
     Operator = { fg = palette.fg_main },
     Title = { fg = palette.fg_main, fmt = "bold" },
@@ -94,7 +94,7 @@ hl.syntax = {
     DiagnosticUnderlineInfo = { sp = palette.blue, fmt = "undercurl" },
     DiagnosticHint = { fg = palette.blue },
     DiagnosticUnderlineHint = { sp = palette.blue, fmt = "undercurl" },
-    DiagnosticUnnecessary = { fg = palette.blue, fmt = "italic" },
+    DiagnosticUnnecessary = { sp = palette.blue, fmt = "undercurl" },
 }
 
 -- comment
@@ -121,6 +121,13 @@ hl.treesitter = {
     ["@tag"] = hl.syntax.Tag,
     ["@tag.delimiter"] = hl.syntax.Delimiter,
     ["@tag.attribute"] = { fg = palette.darker1 },
+
+    -- css
+    ["@property.css"] = hl.syntax.String,
+    ["@attribute.css"] = hl.syntax.String,
+    ["@tag.css"] = hl.syntax.String,
+    ["@type.css"] = hl.syntax.String,
+    ["@punctuation.delimiter.css"] = hl.syntax.String,
 }
 
 local function set_highlights(highlights)
