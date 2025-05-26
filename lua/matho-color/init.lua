@@ -17,13 +17,12 @@ local palette = {
     dark_purple = "#65435e",
 
     blue = "#70a7cf",
+    dark_blue = "#9285ad",
 
     yellow = "#cfad70",
 
     green = "#819B69",
 }
-
-local num = 0
 
 local hl = {}
 
@@ -55,7 +54,7 @@ hl.syntax = {
     Boolean = { fg = palette.fg_main, fmt = "italic" },
     String = { fg = palette.dark_red },
     Character = { fg = palette.dark_red },
-    Number = { fg = palette.dark_red },
+    Number = { fg = palette.dark_blue },
     Float = { fg = palette.darker2 },
     Type = { fg = palette.darker1 },
     Typedef = { fg = palette.darker1 },
@@ -105,7 +104,7 @@ hl.treesitter = {
     ["@module"] = { fg = palette.darker2, fmt = "italic" },
     ["@label"] = hl.syntax.Label,
     ["@string"] = hl.syntax.String,
-    ["@character"] = { fg = palette.blue },
+    ["@character"] = hl.syntax.Character,
     ["@boolean"] = hl.syntax.Boolean,
     ["@number"] = hl.syntax.Number,
     ["@type"] = hl.syntax.Type,
