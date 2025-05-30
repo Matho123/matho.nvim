@@ -22,6 +22,7 @@ local palette = {
     yellow = "#cf9970",
 
     green = "#819B69",
+    dark_green = "#8ead85",
 }
 
 local hl = {}
@@ -51,8 +52,8 @@ hl.common = {
 hl.syntax = {
     Normal = { fg = palette.fg_main },
     Bold = { fmt = "bold" },
-    Boolean = { fg = palette.fg_main, fmt = "italic" },
-    String = { fg = palette.dark_red },
+    Boolean = { fg = palette.dark_blue, fmt = "italic" },
+    String = { fg = palette.dark_green },
     Character = { fg = palette.dark_red },
     Number = { fg = palette.dark_blue },
     Float = { fg = palette.darker2 },
@@ -80,7 +81,7 @@ hl.syntax = {
     Title = { fg = palette.fg_main, fmt = "bold" },
     Tag = { fg = palette.darker1, fmt = "bold" },
     Delimiter = { fg = palette.darker3 },
-    Comment = { fg = palette.purple, fmt = "italic" },
+    Comment = { fg = palette.dark_red, fmt = "italic" },
     SpecialComment = { fg = palette.light_purple, fmt = "italic" },
     Todo = { fg = palette.fg_main },
     Error = { fg = palette.red },
