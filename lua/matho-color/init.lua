@@ -12,7 +12,7 @@ local palette = {
     red = "#de6e7c",
     dark_red = "#ad858f",
 
-    light_purple = "#bf8fb5",
+    light_purple = "#aa80a2",
     purple = "#a87da0",
     dark_purple = "#65435e",
 
@@ -54,7 +54,7 @@ hl.syntax = {
     Normal = { fg = palette.fg_main },
     Bold = { fmt = "bold" },
     Boolean = { fg = palette.dark_blue, fmt = "italic" },
-    String = { fg = palette.dark_orange },
+    String = { fg = palette.dark_red },
     Character = { fg = palette.dark_red },
     Number = { fg = palette.dark_blue },
     Float = { fg = palette.darker2 },
