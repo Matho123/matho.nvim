@@ -9,7 +9,7 @@ local palette = {
 
     background = "#191919",
 
-    red = "#de6e7c",
+    red = "#dd495a",
     dark_red = "#ad858f",
 
     light_purple = "#aa80a2",
@@ -19,7 +19,7 @@ local palette = {
     blue = "#70a7cf",
     dark_blue = "#9285ad",
 
-    orange = "#cf9970",
+    orange = "#ce9652",
     dark_orange = "#ad9685",
 
     green = "#819B69",
