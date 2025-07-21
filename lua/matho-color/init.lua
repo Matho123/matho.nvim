@@ -9,17 +9,18 @@ local palette = {
 
     background = "#191919",
 
-    red = "#de6e7c",
+    red = "#dd495a",
     dark_red = "#ad858f",
 
-    light_purple = "#bf8fb5",
+    light_purple = "#aa80a2",
     purple = "#a87da0",
     dark_purple = "#65435e",
 
     blue = "#70a7cf",
     dark_blue = "#9285ad",
 
-    yellow = "#cf9970",
+    orange = "#ce9652",
+    dark_orange = "#ad9685",
 
     green = "#819B69",
     dark_green = "#93a38f",
@@ -86,11 +87,11 @@ hl.syntax = {
     Todo = { fg = palette.fg_main },
     Error = { fg = palette.red },
     ErrorMsg = { fg = palette.red },
-    WarningMsg = { fg = palette.yellow },
+    WarningMsg = { fg = palette.orange },
     DiagnosticError = { fg = palette.red },
     DiagnosticUnderlineError = { sp = palette.red, fmt = "undercurl" },
-    DiagnosticWarn = { fg = palette.yellow },
-    DiagnosticUnderlineWarn = { sp = palette.yellow, fmt = "undercurl" },
+    DiagnosticWarn = { fg = palette.orange },
+    DiagnosticUnderlineWarn = { sp = palette.orange, fmt = "undercurl" },
     DiagnosticInfo = { fg = palette.blue },
     DiagnosticUnderlineInfo = { sp = palette.blue, fmt = "undercurl" },
     DiagnosticHint = { fg = palette.blue },
