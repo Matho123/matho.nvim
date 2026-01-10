@@ -7,7 +7,7 @@ local palette = {
 
     delimiter = "#7c7c7c",
     variable = "#9e9e9e",
-    functionDef = "#8d99c9",
+    functionDef = "#ad7ebf",
 
     character = "#ad858f",
     number = "#9285ad",
