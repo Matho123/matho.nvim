@@ -1,5 +1,6 @@
 vim.g.colors_name = "matho"
 
+-- comment
 local textPalette = {
     background = "#191919",
     fg_main = "#bbbbbb",
@@ -12,7 +13,7 @@ local textPalette = {
     character = "#ad858f",
     number = "#9285ad",
 
-    comment = "#af5993",
+    comment = "#b76a98",
 }
 
 local uiPalette = {
