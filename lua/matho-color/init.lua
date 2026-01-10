@@ -2,28 +2,26 @@ local M = {}
 
 -- comment
 local palette = {
-    fg_main = "#bbbbbb",
-    darker1 = "#9e9e9e",
-    darker2 = "#8b8b8b",
-    darker3 = "#7c7c7c",
-
     background = "#191919",
+    fg_main = "#bbbbbb",
 
-    red = "#dd495a",
-    dark_red = "#ad858f",
+    delimiter = "#7c7c7c",
+    variable = "#9e9e9e",
+    functionDef = "#8d99c9",
 
+    character = "#ad858f",
+    number = "#9285ad",
+
+    comment = "#ad5697",
+
+    -- diagnostic / editor ui
+    darker2 = "#8b8b8b",
     light_purple = "#aa80a2",
-    purple = "#a87da0",
     dark_purple = "#65435e",
-
     blue = "#70a7cf",
-    dark_blue = "#9285ad",
-
+    red = "#dd495a",
     orange = "#ce9652",
-    dark_orange = "#ad9685",
-
     green = "#819B69",
-    dark_green = "#8ead85",
 }
 
 local hl = {}
@@ -45,6 +43,7 @@ hl.common = {
     MoreMsg = { fg = palette.green, fmt = "bold" },
     Question = { fg = palette.green, fmt = "bold" },
     netrwComment = { fg = palette.darker2 },
+    netrwClassify = { fg = palette.fg_main, fmt = "bold" },
     netrwQuickHelp = { fg = palette.darker2 },
     Visual = { bg = "#393939" },
     Whitespace = { fg = "#303030" },
@@ -53,17 +52,17 @@ hl.common = {
 hl.syntax = {
     Normal = { fg = palette.fg_main },
     Bold = { fmt = "bold" },
-    Boolean = { fg = palette.dark_blue, fmt = "italic" },
-    String = { fg = palette.dark_red },
-    Character = { fg = palette.dark_red },
-    Number = { fg = palette.dark_blue },
-    Float = { fg = palette.darker2 },
-    Type = { fg = palette.darker1 },
-    Typedef = { fg = palette.darker1 },
+    Boolean = { fg = palette.number },
+    String = { fg = palette.character },
+    Character = { fg = palette.character },
+    Number = { fg = palette.number },
+    Float = { fg = palette.number },
+    Type = { fg = palette.variable },
+    Typedef = { fg = palette.variable },
     Structure = { fg = palette.fg_main },
     StorageClass = { fg = palette.fg_main },
-    Identifier = { fg = palette.darker1 },
-    Constant = { fg = palette.darker1, fmt = "bold" },
+    Identifier = { fg = palette.variable },
+    Constant = { fg = palette.variable },
     PreProc = { fg = palette.fg_main },
     PreCondit = { fg = palette.fg_main },
     Keyword = { fg = palette.fg_main, fmt = "bold" },
@@ -75,15 +74,15 @@ hl.syntax = {
     Label = { fg = palette.fg_main, fmt = "bold" },
     Include = { fg = palette.fg_main, fmt = "bold" },
     Macro = { fg = palette.fg_main },
-    Special = { fg = palette.darker1, fmt = "bold" },
-    SpecialChar = { fg = palette.dark_blue, fmt = "bold" },
-    Function = { fg = palette.fg_main },
+    Special = { fg = palette.variable, fmt = "bold" },
+    SpecialChar = { fg = palette.number, fmt = "bold" },
+    Function = { fg = palette.functionDef },
     Operator = { fg = palette.fg_main },
     Title = { fg = palette.fg_main, fmt = "bold" },
-    Tag = { fg = palette.darker1, fmt = "bold" },
-    Delimiter = { fg = palette.darker3 },
-    Comment = { fg = palette.light_purple, fmt = "italic" },
-    SpecialComment = { fg = palette.light_purple, fmt = "italic" },
+    Tag = { fg = palette.variable, fmt = "bold" },
+    Delimiter = { fg = palette.delimiter },
+    Comment = { fg = palette.comment },
+    SpecialComment = { fg = palette.light_purple },
     Todo = { fg = palette.fg_main },
     Error = { fg = palette.red },
     ErrorMsg = { fg = palette.red },
@@ -109,10 +108,13 @@ hl.treesitter = {
     ["@character"] = hl.syntax.Character,
     ["@boolean"] = hl.syntax.Boolean,
     ["@number"] = hl.syntax.Number,
+    ["@number.float"] = hl.syntax.Number,
     ["@type"] = hl.syntax.Type,
     ["@type.builtin"] = hl.syntax.Type,
     ["@attribute"] = { fg = palette.fg_main },
     ["@function"] = hl.syntax.Function,
+    ["@function.call"] = { fg = palette.fg_main },
+    ["@function.call.c"] = { fg = palette.fg_main },
     ["@constructor"] = { fg = palette.fg_main },
     ["@operator"] = hl.syntax.Statement,
     ["@keyword"] = hl.syntax.Keyword,
@@ -122,7 +124,7 @@ hl.treesitter = {
     ["@diff"] = { fg = palette.fg_main },
     ["@tag"] = hl.syntax.Tag,
     ["@tag.delimiter"] = hl.syntax.Delimiter,
-    ["@tag.attribute"] = { fg = palette.darker1 },
+    ["@tag.attribute"] = { fg = palette.variable },
 
     -- css
     ["@property.css"] = hl.syntax.String,
@@ -151,6 +153,12 @@ function M.setup()
     set_highlights(hl.common)
     set_highlights(hl.syntax)
     set_highlights(hl.treesitter)
+end
+
+
+-- disable lsp semantic tokens
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+    vim.api.nvim_set_hl(0, group, {})
 end
 
 return M
