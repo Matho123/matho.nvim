@@ -114,7 +114,7 @@ hl.treesitter = {
     ["@attribute"] = { fg = palette.fg_main },
     ["@function"] = hl.syntax.Function,
     ["@function.call"] = { fg = palette.fg_main },
-    ["@method.call"] = { fg = palette.fg_main },
+    ["@function.method.call"] = { fg = palette.fg_main },
     ["@function.call.c"] = { fg = palette.fg_main },
     ["@constructor"] = { fg = palette.fg_main },
     ["@operator"] = hl.syntax.Statement,
