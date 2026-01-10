@@ -1,4 +1,4 @@
-vim.g.colors_name = "matho"
+vim.g.colors_name = "matho-tonsky"
 
 local textPalette = {
     background = "#191919",
@@ -6,12 +6,13 @@ local textPalette = {
 
     delimiter = "#7c7c7c",
     variable = "#9e9e9e",
-    functionDef = "#ad7ebf",
+    functionDef = "#8cb4d1",
+    exit = "#ce3b5e",
 
-    character = "#ad858f",
-    number = "#9285ad",
+    character = "#a1bf85",
+    number = "#b2a3d1",
 
-    comment = "#ad5697",
+    comment = "#d37967",
 }
 
 local uiPalette = {
