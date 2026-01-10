@@ -125,9 +125,15 @@ function M.setup(textPalette, uiPalette)
         ["@type.css"] = hl.syntax.String,
         ["@punctuation.delimiter.css"] = hl.syntax.String,
     }
+
+    hl.telescope = {
+        TelescopeMatching = { fg = uiPalette.feedback, fmt = "bold" }
+    }
+
     set_highlights(hl.common)
     set_highlights(hl.syntax)
     set_highlights(hl.treesitter)
+    set_highlights(hl.telescope)
 end
 
 
