@@ -1,13 +1,12 @@
 vim.g.colors_name = "matho"
 
--- comment
 local textPalette = {
     background = "#191919",
     fg_main = "#bbbbbb",
 
     delimiter = "#7c7c7c",
     variable = "#9e9e9e",
-    functionDef = "#70a7cf",
+    functionDef = "#80a7ce",
     exit = "#bbbbbb",
 
     character = "#ad858f",
