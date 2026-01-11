@@ -12,7 +12,7 @@ local textPalette = {
     character = "#ad858f",
     number = "#9285ad",
 
-    comment = "#b76a98",
+    comment = "#b7779d",
 }
 
 local uiPalette = {
