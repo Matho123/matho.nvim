@@ -2,17 +2,16 @@ vim.g.colors_name = "matho"
 
 local textPalette = {
     background = "#191919",
-    fg_main = "#bbbbbb",
+    base = "#cccccc",
+    muted = "#999999",
+    definition = "#80a7ce",
 
-    delimiter = "#7c7c7c",
-    variable = "#9e9e9e",
-    functionDef = "#80a7ce",
-    exit = "#bbbbbb",
+    exit = "#999999",
 
-    character = "#ad858f",
-    number = "#9285ad",
+    character = "#b77787",
+    constant = "#9682ba",
 
-    comment = "#b7779d",
+    comment = "#c69c75",
 }
 
 local uiPalette = {
