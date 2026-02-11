@@ -19,9 +19,9 @@ function M.setup(textPalette, uiPalette)
 
     hl.common = {
         LineNr = { fg = textPalette.muted },
-        CursorLineNr = { fg = textPalette.base, fmt = 'bold' },
+        CursorLineNr = { fg = textPalette.base, fmt = "bold" },
         CursorLine = { bg = "#1c1c1c" },
-        Directory = { fg = textPalette.definition },
+        Directory = { fg = textPalette.definition, fmt = "bold" },
         ModeMsg = { fg = textPalette.base },
         Search = { fg = textPalette.base, bg = uiPalette.searchDarker },
         MatchParen = { fg = textPalette.base, bg = uiPalette.searchDarker },
@@ -92,7 +92,10 @@ function M.setup(textPalette, uiPalette)
     -- comment
     hl.treesitter = {
         ["@variable"] = hl.syntax.Identifier,
+        ["@variable.builtin"] = hl.syntax.Identifier,
+        ["@variable.parameter.builtin"] = hl.syntax.Identifier,
         ["@constant"] = hl.syntax.Constant,
+        ["@constant.builtin"] = hl.syntax.Constant,
         ["@label"] = hl.syntax.Label,
         ["@string"] = hl.syntax.String,
         ["@character"] = hl.syntax.Character,
@@ -131,7 +134,7 @@ function M.setup(textPalette, uiPalette)
     }
 
     hl.telescope = {
-        TelescopeMatching = { fg = uiPalette.feedback }
+        TelescopeMatching = { fg = uiPalette.feedback, fmt = "bold" }
     }
 
     set_highlights(hl.common)
