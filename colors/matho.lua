@@ -6,7 +6,7 @@ local textPalette = {
     muted = "#999999",
     definition = "#80a7ce",
 
-    exit = "#999999",
+    exit = "#c64f4f",
 
     character = "#b77787",
     constant = "#9682ba",
