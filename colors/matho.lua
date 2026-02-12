@@ -6,12 +6,12 @@ local textPalette = {
     muted = "#999999",
     definition = "#80a7ce",
 
-    exit = "#c64f4f",
+    comment = "#c69c75",
+    exit = "#83a598",
 
     character = "#b77787",
     constant = "#9682ba",
 
-    comment = "#c69c75",
 }
 
 local uiPalette = {
