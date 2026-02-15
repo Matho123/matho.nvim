@@ -1,12 +1,12 @@
 local M = {}
 
 --comment
-local function set_highlights(highlights, background)
+local function set_highlights(highlights)
     for hl_group, hl_settings in pairs(highlights) do
         local hl_command = string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s",
             hl_group,
             hl_settings.fg or "none",
-            hl_settings.bg or background,
+            hl_settings.bg or "none",
             hl_settings.sp or "none",
             hl_settings.fmt or "none"
         )
@@ -138,10 +138,10 @@ function M.setup(textPalette, uiPalette)
         TelescopeMatching = { fg = uiPalette.feedback, fmt = "bold" }
     }
 
-    set_highlights(hl.common, textPalette.background)
-    set_highlights(hl.syntax, textPalette.background)
-    set_highlights(hl.treesitter, textPalette.background)
-    set_highlights(hl.telescope, textPalette.background)
+    set_highlights(hl.common)
+    set_highlights(hl.syntax)
+    set_highlights(hl.treesitter)
+    set_highlights(hl.telescope)
 end
 
 
