@@ -1,7 +1,7 @@
 vim.g.colors_name = "matho"
 
 local textPalette = {
-    background = "#191919",
+    background = "none", -- can be "none"
     base = "#bbbbbb",
     muted = "#888888",
     definition = "#80a7ce",
