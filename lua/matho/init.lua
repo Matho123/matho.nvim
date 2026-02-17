@@ -38,6 +38,7 @@ function M.setup(textPalette, uiPalette)
         netrwQuickHelp = { fg = uiPalette.muted },
         Visual = { bg = "#393939" },
         Whitespace = { fg = "#303030" },
+        gitcommitSummary = { fg = textPalette.base }
     }
 
     hl.syntax = {
