@@ -70,7 +70,7 @@ function M.setup(textPalette, uiPalette)
         Function = { fg = textPalette.definition },
         Operator = { fg = textPalette.muted },
         Title = { fg = textPalette.base, fmt = "bold" },
-        Tag = { fg = textPalette.base },
+        Tag = { fg = textPalette.muted },
         Delimiter = { fg = textPalette.muted },
         Comment = { fg = textPalette.comment },
         SpecialComment = { fg = uiPalette.search },
@@ -123,6 +123,7 @@ function M.setup(textPalette, uiPalette)
         ["@markup"] = { fg = textPalette.base },
         ["@diff"] = { fg = textPalette.base },
         ["@tag"] = hl.syntax.Tag,
+        ["@tag.builtin"] = hl.syntax.Tag,
         ["@tag.delimiter"] = hl.syntax.Delimiter,
         ["@tag.attribute"] = { fg = textPalette.base },
 
