@@ -30,7 +30,7 @@ function M.setup(textPalette, uiPalette)
         CurSearch = { fg = textPalette.background, bg = uiPalette.search },
         IncSearch = { fg = textPalette.background, bg = uiPalette.search },
         WildMenu = { fg = textPalette.background, bg = textPalette.special },
-        StatusLine = { fg = textPalette.base, bg = "#202020" },
+        StatusLine = { fg = textPalette.base },
         MoreMsg = { fg = uiPalette.feedback },
         Question = { fg = uiPalette.feedback },
         netrwComment = { fg = uiPalette.muted },
@@ -38,6 +38,7 @@ function M.setup(textPalette, uiPalette)
         netrwQuickHelp = { fg = uiPalette.muted },
         Visual = { bg = "#393939" },
         Whitespace = { fg = "#303030" },
+        WinSeparator = { fg = "#404040" },
         gitcommitSummary = { fg = textPalette.base }
     }
 
@@ -145,7 +146,6 @@ function M.setup(textPalette, uiPalette)
     set_highlights(hl.treesitter)
     set_highlights(hl.telescope)
 end
-
 
 -- disable lsp semantic tokens highlighting
 for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
