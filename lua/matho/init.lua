@@ -20,7 +20,7 @@ function M.setup(textPalette, uiPalette)
     hl.common = {
         LineNr = { fg = textPalette.muted },
         CursorLineNr = { fg = textPalette.base, fmt = "bold" },
-        CursorLine = { }, -- bg = "#1c1c1c",fmt = "underline", sp = "#303030"
+        CursorLine = { bg = "#1c1c1c" }, -- bg = "#1c1c1c",fmt = "underline", sp = "#303030"
         Directory = { fg = textPalette.definition, fmt = "bold" },
         ModeMsg = { fg = textPalette.base },
         Search = { fg = textPalette.base, bg = uiPalette.searchDarker },
