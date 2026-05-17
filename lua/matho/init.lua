@@ -20,7 +20,7 @@ function M.setup(textPalette, uiPalette)
     hl.common = {
         LineNr = { fg = textPalette.muted },
         CursorLineNr = { fg = textPalette.base, fmt = "bold" },
-        CursorLine = { bg = "#1c1c1c" }, -- bg = "#1c1c1c",fmt = "underline", sp = "#303030"
+        CursorLine = { bg = uiPalette.cursorLine },
         Directory = { fg = textPalette.definition, fmt = "bold" },
         ModeMsg = { fg = textPalette.base },
         Search = { fg = textPalette.base, bg = uiPalette.searchDarker },
@@ -30,15 +30,15 @@ function M.setup(textPalette, uiPalette)
         CurSearch = { fg = textPalette.background, bg = uiPalette.search },
         IncSearch = { fg = textPalette.background, bg = uiPalette.search },
         WildMenu = { fg = textPalette.background, bg = textPalette.special },
-        StatusLine = { fg = textPalette.base },
+        StatusLine = { fg = textPalette.base, bg = uiPalette.status },
         MoreMsg = { fg = uiPalette.feedback },
         Question = { fg = uiPalette.feedback },
         netrwComment = { fg = uiPalette.muted },
         netrwClassify = { fg = textPalette.base },
         netrwQuickHelp = { fg = uiPalette.muted },
-        Visual = { bg = "#393939" },
-        Whitespace = { fg = "#303030" },
-        WinSeparator = { fg = "#404040" },
+        Visual = { bg = uiPalette.visual },
+        Whitespace = { fg = uiPalette.whitespace },
+        WinSeparator = { fg = uiPalette.separator },
         gitcommitSummary = { fg = textPalette.base }
     }
 
@@ -97,7 +97,7 @@ function M.setup(textPalette, uiPalette)
         ["@variable.builtin"] = hl.syntax.Identifier,
         ["@variable.parameter.builtin"] = hl.syntax.Identifier,
         ["@constant"] = hl.syntax.Constant,
-        ["@constant.builtin"] = hl.syntax.Constant,
+        ["@constant.builtin"] = textPalette.constant,
         ["@label"] = hl.syntax.Label,
         ["@string"] = hl.syntax.String,
         ["@character"] = hl.syntax.Character,
