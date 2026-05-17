@@ -23,9 +23,9 @@ local uiPalette = {
     separator = "#404040",
     status = "#2a2a2a",
     info = "#70a7cf",
-    error = "#dd495a",
-    warning = "#ce9652",
-    feedback = "#819B69",
+    error = "#f9455a",
+    warning = "#ef982d",
+    feedback = "#8eb56a",
 }
 
 require('matho').setup(textPalette, uiPalette)
