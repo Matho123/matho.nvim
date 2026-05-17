@@ -122,6 +122,7 @@ function M.setup(textPalette, uiPalette)
         ["@punctuation.delimiter"] = hl.syntax.Delimiter,
         ["@punctuation.bracket"] = hl.syntax.Delimiter,
         ["@comment"] = hl.syntax.Comment,
+        ["@comment.gitcommit"] = { fg = textPalette.muted },
         ["@markup"] = { fg = textPalette.base },
         ["@diff"] = { fg = textPalette.base },
         ["@tag"] = hl.syntax.Tag,
