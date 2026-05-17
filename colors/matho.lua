@@ -2,22 +2,26 @@ vim.g.colors_name = "matho"
 
 local textPalette = {
     background = "#000000",
-    base = "#cccccc",
-    muted = "#999999",
-    definition = "#80a7ce",
+    base = "#dddddd",
+    muted = "#aaaaaa",
+    definition = "#99c6fc",
 
-    comment = "#c69c75",
-    exit = "#83a598",
+    comment = "#eda584",
+    exit = "#eda584",
 
-    character = "#b77787",
-    constant = "#9682ba",
-
+    character = "#dd859b",
+    constant = "#b69ee2",
 }
 
 local uiPalette = {
     muted = "#8b8b8b",
     search = "#aa80a2",
     searchDarker = "#65435e",
+    cursorLine = "#1a1a1a",
+    visual = "#393939",
+    whitespace = "#303030",
+    separator = "#404040",
+    status = "#2a2a2a",
     info = "#70a7cf",
     error = "#dd495a",
     warning = "#ce9652",
