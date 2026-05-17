@@ -6,8 +6,8 @@ local textPalette = {
     muted = "#aaaaaa",
     definition = "#99c6fc",
 
-    comment = "#eda584",
-    exit = "#eda584",
+    comment = "#e5cc8b",
+    exit = "#b4d173",
 
     character = "#dd859b",
     constant = "#b69ee2",
